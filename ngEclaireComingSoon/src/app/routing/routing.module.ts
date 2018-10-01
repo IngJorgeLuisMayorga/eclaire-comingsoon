@@ -11,7 +11,7 @@ import { ComingsoonComponent } from './../views/comingsoon/comingsoon.component'
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: ComingsoonComponent
   },
   {
     path: 'comingsoon',

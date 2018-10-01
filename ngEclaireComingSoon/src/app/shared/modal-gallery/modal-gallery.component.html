@@ -1,0 +1,23 @@
+<div class="modal-gallery" *ngIf="HOVER">
+
+
+  <div class="gallery-buttons">
+
+    <div class="button-close" (click) = "closeModal()">
+        <i class="fas fa-times-circle"></i>
+    </div>
+
+    <div class="button-prev">
+        <i class="fas fa-angle-left" (click) = "prevImgSrc()"></i>
+    </div>
+    <div class="button-next">
+        <i class="fas fa-angle-right" (click) = "nextImgSrc()"></i>
+    </div>
+  </div>
+
+  <div class="gallery-content">
+    <img [src]="UI.imgSrc">
+  </div>
+
+
+</div>

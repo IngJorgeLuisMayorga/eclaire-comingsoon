@@ -3,7 +3,7 @@
 
 .vw-section{
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: block;
   background-color:  #EFEFEF;
   color: #6C6C78;
@@ -98,24 +98,60 @@
     .align-content(flex-start);
     .align-items(flex-start);
 
-  .pic{
+  .tile{
     width: 50%;
-    height: 35%;
+    height:10em;
     box-sizing: border-box;
     display: block;
+    overflow: hidden;
+    background-color:  #EFEFEF;
+    color: #6C6C78;
+
+    .flex-display(flex);
+    .flex-direction(columns);
+    .flex-wrap(wrap);
+    .justify-content(flex-start);
+    .align-content(flex-start);
+    .align-items(flex-start);
+
+    div.tile-content,img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position:relative;
+    }
+
+    div.tile-content{
+      .flex-display(flex);
+      .flex-direction(column);
+      .flex-wrap(wrap);
+      .justify-content(flex-end);
+      .align-content(flex-end);
+      .align-items(flex-end);
+    }
+    hr{
+      display: block;
+      width: 3.5em;
+      height: 0.25em;
+      margin: 0.25em 0.5em;
+      background-color: #6C6C78;
+    }
+    h2{
+      display: block;
+      text-align: right;
+      width:fit-content;
+      padding: 0.5em;
+      line-height: 100%;
+      text-transform: uppercase;
+    }
+    .icon{
+      display: block;
+      width: 3em;
+      height: 3em;
+      margin: 0.25em 0.5em;
+      object-fit: contain;
+    }
   }
 
 }
 
-
-.tile-pic{
-display: block;
-width: 50%;
-height: 50%;
-}
-
-.tile-info{
-  display: block;
-  width: 50%;
-  height: 50%;
-}

@@ -1,0 +1,86 @@
+.modal-gallery{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba(0,0,0,0.9);
+
+  z-index: 100;
+}
+
+
+.gallery-content{
+
+  display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    position: fixed;
+
+    top: 0px;
+
+    width: 100vw;
+    height: 100vh;
+
+    img{
+      width: 80vw;
+      height: 80vh;
+      object-fit: cover;
+      object-position: center;
+    }
+}
+
+
+
+.button-close{
+  color: white;
+  position: fixed;
+  top: calc(10vh - 1em);
+  right: calc(10vw - 1.6em);
+  z-index: 200;
+  .fas{
+   font-size: 1.75em;
+   background-color: black;
+   border-radius: 127%;
+  }
+}
+
+.button-next,.button-prev{
+  color: white;
+  position: fixed;
+  top: calc(50vh - 1em);
+  z-index: 200;
+  .fas{
+   font-size: 1.75em
+  }
+}
+
+.button-next{
+  right: calc(10vw + 1em);
+  z-index: 200;
+  color: rgba(255,255,255,0.5);
+}
+
+.button-prev{
+  left: calc(10vw + 1em);
+  z-index: 200;
+  color: rgba(255,255,255,0.5);
+}

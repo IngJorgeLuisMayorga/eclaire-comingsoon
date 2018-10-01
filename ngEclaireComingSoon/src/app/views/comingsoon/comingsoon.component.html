@@ -29,44 +29,20 @@
 </div>
 
 
-
-
-
-
-
-
-
-
 <div class="vw-section">
   <div class="gallery">
 
-    <div *ngFor="let project of projects">
+    <div *ngFor="let tile of tiles;let k = index" class="tile">
 
-      <div class="tile" *ngFor="let tile of project.tiles">
-
-        <div class="tile-info" *ngIf="tile.type == 'info'">
-          <h2>{{ project.name }}</h2>
+        <div *ngIf="tile.name" class="tile-content">
+            <img class="icon" [src] = "tile.icon" >
+            <hr>
+            <h2>{{tile.name}}</h2>
+        </div>
+        <div *ngIf="!tile.name" class="tile-content" >
+            <img [src]="tile.src">
         </div>
 
-        <div *ngIf="tile.type == 'picture'">
-          <div class="picture" *ngFor="let picture of tile.pictures" >
-            <div class="tile-pic">
-            <ec-pic
-              [srcLow]='galleryPath + project.path + "/img" + picture + ".jpg" '
-              [srcMid]='galleryPath + project.path + "/img" + picture + ".jpg" '
-              [srcHigh]='galleryPath + project.path + "/img" + picture + ".jpg"
-              '>
-            </ec-pic>
-          </div>
-          </div>
-        </div>
-
-
-      </div>
-
-      <br>
-      <br>
-      <br>
 
     </div>
   </div>
@@ -75,6 +51,3 @@
 </div>
 
 
-<div class="vw-section vw-footer">
-
-</div>
