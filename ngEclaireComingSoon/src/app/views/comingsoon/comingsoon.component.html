@@ -34,12 +34,12 @@
 
     <div *ngFor="let tile of tiles;let k = index" class="tile">
 
-        <div *ngIf="tile.name" class="tile-content">
+        <div *ngIf="tile.name" class="tile-content" (click) = "openModal(k)">
             <img class="icon" [src] = "tile.icon" >
             <hr>
             <h2>{{tile.name}}</h2>
         </div>
-        <div *ngIf="!tile.name" class="tile-content" >
+        <div *ngIf="!tile.name" class="tile-content" (click) = "openModal(k)">
             <img [src]="tile.src">
         </div>
 
@@ -50,4 +50,26 @@
 
 </div>
 
+<div class="vw-section vw-modal" *ngIf="UX.HOVER">
 
+    <div class="button-close" (click) = "UX.HOVER = false">
+        <i class="fas fa-times-circle"></i>
+    </div>
+
+  <swiper [config]="config" [index]="index">
+    <div *ngFor="let tile of tiles;let k = index" class="tile">
+
+      <div class="modal-slide">
+        <div *ngIf="tile.name" class="tile-content">
+              <img class="icon" [src] = "tile.icon" >
+              <hr>
+              <h2>{{tile.name}}</h2>
+        </div>
+        <div *ngIf="!tile.name" class="tile-content" >
+              <img [src]="tile.src" >
+        </div>
+      </div>
+
+      </div>
+  </swiper>
+</div>

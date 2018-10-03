@@ -6,6 +6,8 @@
   min-height: 100vh;
   display: block;
   background-color:  #EFEFEF;
+  background-color:  #EFEFEF;
+  background-color: #d4d3d3;
   color: #6C6C78;
 }
 .vw-section.vw-footer{
@@ -57,16 +59,19 @@
 
 .logo{
   .logo-title{
-    width: 90%;
-    display: block;
-    margin: 0 auto;
-  }
-  .logo-subtitle{
     width: 50%;
     display: block;
     margin: 0 auto;
   }
+  .logo-subtitle{
+    width: 20%;
+    display: block;
+    margin: 0 auto;
+  }
 }
+
+
+
 .next-button{
   position: absolute;
   bottom: 0px;
@@ -86,10 +91,13 @@
 
 .gallery{
 
-
-    width: 100%;
+    width: 75%;
     height: 100%;
 
+    margin: 0 auto;
+
+    padding-top: 10em;
+    padding-bottom: 10em;
 
     .flex-display(flex);
     .flex-direction(row);
@@ -98,60 +106,248 @@
     .align-content(flex-start);
     .align-items(flex-start);
 
-  .tile{
-    width: 50%;
-    height:10em;
-    box-sizing: border-box;
-    display: block;
-    overflow: hidden;
-    background-color:  #EFEFEF;
-    color: #6C6C78;
-
-    .flex-display(flex);
-    .flex-direction(columns);
-    .flex-wrap(wrap);
-    .justify-content(flex-start);
-    .align-content(flex-start);
-    .align-items(flex-start);
-
-    div.tile-content,img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position:relative;
-    }
-
-    div.tile-content{
-      .flex-display(flex);
-      .flex-direction(column);
-      .flex-wrap(wrap);
-      .justify-content(flex-end);
-      .align-content(flex-end);
-      .align-items(flex-end);
-    }
-    hr{
+    .tile{
+      width: 33.333%;
+      height:12.5em;
+      box-sizing: border-box;
       display: block;
-      width: 3.5em;
-      height: 0.25em;
-      margin: 0.25em 0.5em;
-      background-color: #6C6C78;
+      overflow: hidden;
+      background-color:  #EFEFEF;
+      color: #6C6C78;
+
+      .flex-display(flex);
+      .flex-direction(columns);
+      .flex-wrap(wrap);
+      .justify-content(flex-start);
+      .align-content(flex-start);
+      .align-items(flex-start);
+
+      div.tile-content,img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position:relative;
+      }
+
+      div.tile-content{
+        .flex-display(flex);
+        .flex-direction(column);
+        .flex-wrap(wrap);
+        .justify-content(flex-end);
+        .align-content(flex-end);
+        .align-items(flex-end);
+      }
+      hr{
+        display: block;
+        width: 3.5em;
+        height: 0.25em;
+        margin: 0.25em 0.5em;
+        background-color: #6C6C78;
+      }
+      h2{
+        display: block;
+        text-align: center;
+        width:fit-content;
+        padding: 0.5em;
+        line-height: 100%;
+        text-transform: uppercase;
+      }
+      .icon{
+        display: block;
+        width: 3em;
+        height: 3em;
+        margin: 0.25em 0.5em;
+        object-fit: contain;
+          -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+      }
     }
+
+
+}
+
+
+
+
+
+
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+.vw-modal{
+display:block;
+padding: 15% 15%;
+box-sizing: border-box;
+position: fixed;
+background-color: rgba(0,0,0,0.9);
+top: 0px;
+left: 0px;
+width: 100vw;
+height: 100vh;
+z-index: 100000;
+overflow: hidden;
+}
+.modal-slide{
+
+  background-color: #efefef;
+
+
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  width:100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  margin: 0 auto;
+}
+
+
+
+
+
+.modal-slide{
     h2{
       display: block;
-      text-align: right;
+      text-align: center;
       width:fit-content;
       padding: 0.5em;
+      font-size: 2em;
       line-height: 100%;
       text-transform: uppercase;
     }
     .icon{
+      margin: 0 auto;
       display: block;
-      width: 3em;
-      height: 3em;
-      margin: 0.25em 0.5em;
-      object-fit: contain;
+      -webkit-filter: grayscale(1);
+      filter: grayscale(1);
     }
-  }
 
 }
 
+.button-close{
+  color: white;
+  position: fixed;
+  top: calc(15vw - 2.5em);
+  right: calc(15% - 2.5em);
+  z-index: 200;
+  .fas{
+   font-size: 3.5em;
+   background-color: black;
+   border-radius: 127%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+  .vw-modal{
+    display:block;
+    padding: 2em;
+    box-sizing: border-box;
+    position: fixed;
+    background-color: rgba(0,0,0,0.76);
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100000;
+    overflow: hidden;
+    }
+.gallery{
+
+width: 100%;
+margin: 0 auto;
+
+padding-top: 0em;
+padding-bottom: 0em;
+.tile{
+
+      width: 50%;
+      height:10em;
+  div.tile-content{
+
+  h2{
+    text-align: right;
+  }
+
+
+}
+
+}
+}
+
+.logo{
+  .logo-title{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+  }
+  .logo-subtitle{
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.modal-slide{
+
+}
+
+
+.button-close{
+  color: white;
+  position: fixed;
+  top: 0em;
+  right: 0em;
+}
+
+}

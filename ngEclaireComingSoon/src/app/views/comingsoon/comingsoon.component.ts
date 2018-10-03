@@ -2,6 +2,9 @@ import { Component, OnInit, Output, Input } from "@angular/core";
 import { MnFullpageOptions } from "ngx-fullpage";
 
 
+import { SwiperModule, SwiperConfigInterface,SwiperScrollbarInterface,SwiperPaginationInterface,
+  SWIPER_CONFIG } from 'ngx-swiper-wrapper';
+
 
 @Component({
   selector: "ec-comingsoon",
@@ -9,6 +12,9 @@ import { MnFullpageOptions } from "ngx-fullpage";
   styleUrls: ["./comingsoon.component.less"]
 })
 export class ComingsoonComponent implements OnInit {
+  public UX = {
+    HOVER : false
+  }
   public galleryPath = "assets/images/gallery/";
   public projects = [
     {
@@ -81,7 +87,9 @@ export class ComingsoonComponent implements OnInit {
     mousewheel: true,
     scrollbar: false,
     navigation: true,
-    pagination: false
+    pagination: false,
+    spaceBetween: 0
+
   };
 
   private scrollbar: SwiperScrollbarInterface = {
@@ -95,6 +103,8 @@ export class ComingsoonComponent implements OnInit {
     clickable: true,
     hideOnClick: false
   };
+
+  public index = 0;
 
 
   constructor() {}
@@ -120,6 +130,12 @@ export class ComingsoonComponent implements OnInit {
 
 
 
+  }
+
+
+  openModal(k){
+    this.UX.HOVER=true;
+    this.index = k;
   }
 
 
